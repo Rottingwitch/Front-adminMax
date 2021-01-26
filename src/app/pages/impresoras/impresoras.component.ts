@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-nopagefound',
-  templateUrl: './nopagefound.component.html',
+  selector: 'app-impresoras',
+  templateUrl: './impresoras.component.html',
   styles: [
   ]
 })
-export class NopagefoundComponent implements OnInit {
+export class ImpresorasComponent implements OnInit {
 
   constructor() { }
 
