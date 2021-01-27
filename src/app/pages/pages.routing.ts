@@ -12,17 +12,12 @@ const routes: Routes = [
         path: 'dashboard' ,
         component: PagesComponent,
         children: [
-          { path: '', component: DashboardComponent  },
-          { path: 'impresoras', component: ImpresorasComponent  },
+          { path: '', component: DashboardComponent, data: { titulo:'DashBoard' }  },
+          { path: 'impresoras', component: ImpresorasComponent,  data: { titulo:'Impresoras' }  },
         ],
     },
     
 
-    //{ path: 'path/:routeParam', component: MyComponent },
-    //{ path: 'staticPath', component: ... },
-    //{ path: '**', component: ... },
-    //{ path: 'oldPath', redirectTo: '/staticPath' },
-    //{ path: ..., component: ..., data: { message: 'Custom' }
 ];
 
 @NgModule({
