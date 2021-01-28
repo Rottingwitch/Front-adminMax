@@ -4,6 +4,8 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ImpresorasComponent } from './impresoras/impresoras.component';
 
+import { AuthGuard } from '../guards/auth.guard';
+
 
 
 const routes: Routes = [
@@ -11,6 +13,7 @@ const routes: Routes = [
     { 
         path: 'dashboard' ,
         component: PagesComponent,
+        canActivate: [ AuthGuard ],
         children: [
           { path: '', component: DashboardComponent, data: { titulo:'DashBoard' }  },
           { path: 'impresoras', component: ImpresorasComponent,  data: { titulo:'Impresoras' }  },

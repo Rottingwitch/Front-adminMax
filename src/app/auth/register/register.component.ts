@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -15,6 +18,7 @@ export class RegisterComponent {
 
     nombre: [ 'walther', Validators.required ],
     email: [ 'aux@ceramigres.com', [ Validators.required, Validators.email ] ],
+    cargo: [ 'analista tecnoloia', Validators.required ],
     password: [ '123', Validators.required ],
     password2: [ '123', Validators.required ],
     terminos: [ true, Validators.required ],
@@ -24,7 +28,8 @@ export class RegisterComponent {
   });
 
   constructor( private fb: FormBuilder,
-               private usuarioService: UsuarioService ) { }
+               private usuarioService: UsuarioService,
+               private router: Router ) { }
 
   crearUsuario() {
     this.formPosteado = true;
@@ -37,10 +42,13 @@ export class RegisterComponent {
     // Realizar la creacion
     this.usuarioService.crearUsuario( this.registerForm.value )
         .subscribe( resp => {
-          console.log(' usuario creado');         
-          console.log( resp );            
+          Swal.fire('Se creo el usuario', 'Ya puedes ingresar a la plataforma','success');
+          // navegar al dashboard
+          this.router.navigateByUrl('/');           
         }, (err) => { 
-          console.warn( err ); 
+           // Error
+          Swal.fire('Error', err.error.msg, 'error')
+
         });
     
   }
