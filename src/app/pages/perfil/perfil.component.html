@@ -1,0 +1,52 @@
+<div class="row">
+    
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Perfil</h4>
+                <h6 class="card-subtitle">Ajustes</h6>
+
+                <form class="form p-t-20"
+                      [formGroup]="perfilForm"
+                      (submit)="actualizarPerfil()" >
+
+                    <div class="form-group">
+                        <label for="exampleInputuname2">Nombre</label>
+                        <div class="input-group">
+                            <input type="text" 
+                                   class="form-control"
+                                   id="exampleInputuname2"
+                                   placeholder="Nombre"
+                                   formControlName="nombre">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">Correo</label>
+                        <div class="input-group">
+                            <input type="email" 
+                                   class="form-control"
+                                   id="exampleInputEmail2"
+                                   placeholder="Email"
+                                   formControlName="email">
+                            <div class="input-group-addon"><i class="ti-email"></i></div>
+                        </div>
+                    </div>
+                    
+  
+                    <div class="text-left">
+                        <button type="submit"
+                                class="btn btn-success waves-effect waves-light m-r-10"
+                                [disabled]="perfilForm.invalid">
+                            <i class="fa fa-save" ></i>
+                            Guardar
+                        </button>
+ 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</div>

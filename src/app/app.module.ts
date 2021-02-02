@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 
 import { AppComponent } from './app.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { ImpresoraComponent } from './pages/mantenimientos/impresora/impresora.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
 
     AppComponent,
     NopagefoundComponent,
+    ImpresoraComponent,
 
   ],
   imports: [

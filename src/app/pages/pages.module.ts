@@ -8,6 +8,8 @@ import { RouterModule } from "@angular/router";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ImpresorasComponent } from './impresoras/impresoras.component';
 import { PagesComponent } from './pages.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,12 +17,14 @@ import { PagesComponent } from './pages.component';
   declarations: [
     ImpresorasComponent,
     DashboardComponent,
-    PagesComponent
+    PagesComponent,
+    PerfilComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [
     ImpresorasComponent,

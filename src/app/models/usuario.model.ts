@@ -7,7 +7,9 @@ export class Usuario {
         public cargo: string,
         public password?: string,
         public uid?: string ,
+        public role?: string ,
     ) {}
+
 
     
 
