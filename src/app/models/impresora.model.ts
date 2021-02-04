@@ -9,7 +9,7 @@ export class Impresora {
         public empresa: string,
         public centro_operacion: number,
         public sucursal: string,
-        public _id?: string,
+        public pid: string,
 
 
     ) {}

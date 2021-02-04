@@ -32,13 +32,13 @@ export class ImpresoraService {
 
   
   actualizarImpresoras( impresora: Impresora ) {  
-    const url = `${ base_url }/impresoras/${ impresora._id }`;
+    const url = `${ base_url }/impresoras/${ impresora.pid }`;
     return this.http.put( url, impresora )
   }
 
-  borrarImpresoras(  impresora: Impresora ) {
+  borrarImpresoras(  pid: string ) {
 
-    const url = `${ base_url }/impresoras/${ impresora._id }`;    
+    const url = `${ base_url }/impresoras/${ pid }`;    
     return this.http.delete( url )
   }
 

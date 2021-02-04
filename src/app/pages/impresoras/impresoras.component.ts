@@ -31,19 +31,21 @@ export class ImpresorasComponent implements OnInit {
         })
   }
 
-  borrarImpresora( impresora: Impresora ) {
-
+  borrarImpresora( printer: Impresora ) {
+  console.log(printer.pid);
+  
     Swal.fire({
       title: 'Borrar Impresora?',
-      text: `Seguro quiere borrar la impresora con el serial ${ impresora.serial }`,
+      text: `Seguro quiere borrar la impresora con el serial ${ printer.serial }`,
       icon: 'question',
       showCancelButton: true,
       confirmButtonText: 'Si, Borrarlo!'
     }).then((result) => {
       if (result.value) {
 
-        this.impresoraService.borrarImpresoras( impresora )
+        this.impresoraService.borrarImpresoras( printer.pid )
             .subscribe( resp => {
+              console.log(resp);
               
               this.cargarImpresora();      
               Swal.fire(
